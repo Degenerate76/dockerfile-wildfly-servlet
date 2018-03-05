@@ -1,6 +1,6 @@
 FROM java:openjdk-8-jre-alpine
 
-# Alpine + OpenJDK 8.x + Wildfly 9 docker image
+# Alpine + OpenJDK 8.x + Wildfly 12 servlet (Undertow) docker image
 
 MAINTAINER degenerate76
 
