@@ -17,6 +17,6 @@ RUN apk --update --no-cache --virtual=build-dependencies add curl ca-certificate
 
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
-EXPOSE 8080 9990
+EXPOSE 8080
 
-CMD [ "/wildfly-servlet/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ]
+CMD [ "/wildfly-servlet/bin/standalone.sh", "-b", "0.0.0.0" ]
