@@ -12,10 +12,11 @@ RUN apk --update --no-cache --virtual=build-dependencies add curl ca-certificate
 	tar -xzf wildfly-servlet.tar.gz && \
 	mv wildfly-servlet-${WILDFLY_VERSION} /wildfly-servlet && \
 	rm -f wildfly-servlet.tar.gz && \
+	rm -rf /wildfly-servlet/welcome-content /wildfly-servlet/docs && \
 	apk del build-dependencies
 
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
 
 EXPOSE 8080 9990
 
-CMD [ "/wildfly-servlet/bin/standalone.sh", "-b", "0.0.0.0" ]
+CMD [ "/wildfly-servlet/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ]
